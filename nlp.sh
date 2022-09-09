@@ -243,7 +243,7 @@ function createMySQLDatabases() {
   }
 
   function launchBrowser() {
-    if [ $TAILWIND = false ]
+    if [ $JETSTREAM = false ]
     then
         echo 'Launching Browser.'
         open -a "Google Chrome" "http://$1.test"
