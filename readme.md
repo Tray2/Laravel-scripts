@@ -1,6 +1,15 @@
 # Laravel-Scripts
 ## is a collection of scripts that will imporve the creation and removal of projects
 
+## Requirements
+
+* PHP
+* MySQL/MariaDB/PostreSQL/SQLite
+* Laravel Valet
+    * nginX
+    * DNSmasq
+* MacOS (Should work on a Linux machine as well but not tested.)
+
 ### Installation
 
 1. Clone this git repository.
@@ -16,8 +25,8 @@ To create a new you just need to run the following command.
 
 This will. 
 
-* Install a new Laravel project.
-* Install the barryvdh/laravel-debugbar. 
+* Install a new [Laravel](https://laravel.com) project.
+* Install the [barryvdh/laravel-debugbar.](https://github.com/barryvdh/laravel-debugbar) 
 * Add a MySQL/MariaDB database with your project name.
 * Update your `.env` file to match the database name for your project.
 * Update `phpunit.xml` to use an SQLite in memory database.
@@ -25,9 +34,9 @@ This will.
  
 You can customize your project setup by passing these optional parameters.
 
-* `-breeze` or `-b` to install the Laravel Breeze starterkit.
-* `-jetstream` or `-j` to install the Laravel Jetstrem package.
-* `-tailwind` or `-t` to install TailwindCSS (Installed by default by Breeze and Jetstream).
+* `-breeze` or `-b` to install the [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits#laravel-breeze) starterkit.
+* `-jetstream` or `-j` to install the [Laravel Jetstrem](https://jetstream.laravel.com/2.x/introduction.html) package.
+* `-tailwind` or `-t` to install [TailwindCSS](https://tailwindcss.com) (Installed by default by Breeze and Jetstream).
 * `-database=postgres` or `-db=postgres` to use a PostgreSql data base instead of a MySQL/MariaDB database.
 * `-test=mysql` to use a MySQL/MariaDB database for testing.
 * `-test=postgres` to use a PostgreSQL database for testing.
