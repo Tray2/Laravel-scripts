@@ -6,11 +6,11 @@
   }
 
   function dropMySQLDatabase() {
-    readonly DATABASE_NAME=${1//[-]/_}
-    readonly DATABASE_NAME_TEST=${1//[-]/_}_test
-    readonly Q1="DROP DATABASE IF EXISTS $DATABASE_NAME;"
-    readonly Q2="DROP DATABASE IF EXISTS $DATABASE_NAME_TEST;"
-    readonly MYSQL=`which mysql`
+    DATABASE_NAME=${1//[-]/_}
+    DATABASE_NAME_TEST=${1//[-]/_}_test
+    Q1="DROP DATABASE IF EXISTS $DATABASE_NAME;"
+    Q2="DROP DATABASE IF EXISTS $DATABASE_NAME_TEST;"
+    MYSQL=`which mysql`
     if [ ! $MYSQL = 'mysql not found' ]
     then 
       echo 'Dropping Databases.'
@@ -21,11 +21,11 @@
   }
 
   function dropPostgreDatabase() {
-    readonly DATABASE_NAME=${1//[-]/_}
-    readonly DATABASE_NAME_TEST=${1//[-]/_}_test
-    readonly Q1="DROP DATABASE $DATABASE_NAME;"
-    readonly Q2="DROP DATABASE $DATABASE_NAME_TEST;"
-    readonly PSQL=`which psql`
+    DATABASE_NAME=${1//[-]/_}
+    DATABASE_NAME_TEST=${1//[-]/_}_test
+    Q1="DROP DATABASE $DATABASE_NAME;"
+    Q2="DROP DATABASE $DATABASE_NAME_TEST;"
+    PSQL=`which psql`
     if [ ! $PSQL = 'psql not found' ]
     then
       echo 'Dropping Databases.'

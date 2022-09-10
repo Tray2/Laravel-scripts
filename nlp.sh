@@ -277,6 +277,7 @@ function launchSublime() {
     if [ ! $SUBL = 'subl not found' ]
     then
       subl "$HOME/code/$1"
+      SUBLIME=true
     fi
   fi
 }
