@@ -174,6 +174,11 @@ function createMySQLDatabases() {
   then  
     DATABASE_NAME=${1//[-]/_}
     readonly MYSQL=`which mysql`
+    if [ $MYSQL = 'mysql not found' ]
+    then
+      echo "Couldn't find MySQL, make sure that it is installed"
+      exit
+    fi  
     Q1="CREATE DATABASE IF NOT EXISTS $DATABASE_NAME;"
     echo 'Creating the database.'
     $MYSQL -uroot -e "$Q1" > /dev/null 2>&1
@@ -192,6 +197,11 @@ function createPostgreDatabases() {
   then
       DATABASE_NAME=${1//[-]/_}
       readonly PSQL=`which psql`
+      if [ PSQL = 'psql not found' ]
+      then
+        echo "Couldn't find PostgreSQL, make sure that it is installed"
+        exit
+      fi
       Q1="CREATE DATABASE $DATABASE_NAME;"
       echo 'Creating the database.'
       $PSQL postgres -c "$Q1" > /dev/null 2>&1
@@ -293,6 +303,15 @@ function launchVSCode() {
   fi
 }
 
+function checkComposer() {
+  COMPOSER=`which composer`
+  if [ $COMPOSER = 'composer not found' ]
+  then
+    echo 'Make sure that you have composer installed, and in the path.'
+    exit
+  fi 
+}
+
 
 if [ -z "$1" ]
 then
@@ -300,6 +319,7 @@ then
     exit
 fi
 
+checkComposer
 checkProjectDirectory $1
 init $2 $3 $4 $5 $6 $7
 installLaravel $1
